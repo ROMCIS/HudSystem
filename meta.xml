@@ -1,0 +1,72 @@
+<meta>
+  	<min_mta_version server="1.5.6-9.18728" client="1.5.6-9.18728"/>
+ 	<info author="ROMCIS, - Lua Developer" type="script" name="hud-system"/>
+
+  	<script src="g_romcis-hud.lua" type="shared" cache="false"/>
+  	<script src="c_romcis-hud.lua" type="client" cache="false"/>
+  	<script src="s_romcis-hud.lua" type="server"/>
+
+	<file src="html/fonts/Bold.ttf" />	
+	<file src="html/fonts/Medium.ttf" />	
+	<file src="html/fonts/Regular.ttf" />	
+
+	<file src="html/index.html" />
+	<file src="html/script.js" />
+	<file src="html/css/style.css" />	
+	<file src="html/css/googlefonts.css" />	
+	<file src="html/css/rb.woff2" />	
+
+	<file src="html/images/shield.png" />	
+	<file src="html/images/heart.svg" />	
+	<file src="html/images/run.svg" />	
+	<file src="html/images/food.svg" />	
+	<file src="html/images/water.svg" />	
+	<file src="html/images/bell.svg" />	
+	<file src="html/images/options.svg" />	
+	<file src="html/images/options2.svg" />	
+	<file src="html/images/logo.png" />
+
+	<file src="html/images/afk.svg" />
+	<file src="html/images/anonymous.svg" />
+	<file src="html/images/cigar.svg" />
+	<file src="html/images/gun.svg" />
+	<file src="html/images/handcuffs.svg" />
+	<file src="html/images/message.svg" />
+	<file src="html/images/nitro.svg" />
+	<file src="html/images/scripter.svg" />
+	<file src="html/images/founder.svg" />
+	<file src="html/images/support.svg" />
+	<file src="html/images/admin.svg" />
+	<file src="html/images/vip.svg" />
+	<file src="html/images/walk.svg" />
+	<file src="html/images/report.svg" />
+
+	<script src = "speedo/mainC.lua" type = "client"/>
+
+	<file src = "speedo/ui/assets/images/food.svg" />
+	<file src = "speedo/ui/assets/images/heart.svg" />
+	<file src = "speedo/ui/assets/images/oxygen.svg" />
+	<file src = "speedo/ui/assets/images/shield.svg" />
+	<file src = "speedo/ui/assets/images/stress.svg" />
+	<file src = "speedo/ui/assets/images/water.svg" />
+
+	<file src="speedo/ui/css/style.css" />
+
+	<file src="speedo/ui/images/awd.png" />
+	<file src="speedo/ui/images/battery.svg" />
+	<file src="speedo/ui/images/door.svg" />
+	<file src="speedo/ui/images/engine.svg" />
+	<file src="speedo/ui/images/gas.svg" />
+	<file src="speedo/ui/images/handbrake.svg" />
+	<file src="speedo/ui/images/key.svg" />
+	<file src="speedo/ui/images/light.svg" />
+	<file src="speedo/ui/images/park.svg" />
+	<file src="speedo/ui/images/seat-belt.svg" />
+	<file src="speedo/ui/images/speedo.svg" />
+	<file src="speedo/ui/images/traction.png" />
+
+    <file src = "speedo/ui/hud.css" />
+    <file src = "speedo/ui/hud.js" />
+    <file src = "speedo/ui/index.html" />
+    <file src = "speedo/ui/jquery-1.11.3.min.js" />
+</meta>

@@ -1,0 +1,311 @@
+@font-face {
+    font-family: 'Tajawal';
+    font-weight: 400;
+    src: url("../fonts/Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Tajawal';
+    font-weight: 500;
+    src: url("../fonts/Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Tajawal';
+    font-weight: 700;
+    src: url("../fonts/Bold.ttf") format("truetype");
+}
+
+* {
+    font-family: 'Tajawal', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    user-select: none;
+    color: #eee;
+    font-size: 14px;
+    z-index: 1;
+}
+
+img {
+    pointer-events: none;
+}
+
+.hud {
+    position: fixed;
+    top: 25px;
+    right: -18px;
+}
+
+.hud .top {
+    position: relative;
+    padding: 0 10px;
+}
+
+.hud .top .time,
+.hud .top .date {
+    position: absolute;
+    bottom: 55;
+    margin-bottom: -2px;
+    text-shadow: 0 0 2px #000;
+}
+
+.hud .top .time {
+    font-size: 12px;
+    left: 300px;
+    bottom: 44;
+}
+
+.hud .top .date {
+    font-size: 12px;
+    right: 75px;
+}
+
+.hud .top .others {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: rgba(41, 41, 41, 2);
+    padding: 8px 16px;
+    border-radius: 6px;
+    width: 360px;
+    height: 40px;
+    top: -52px;
+    right: 68px;
+}
+
+.hud .top .romcis_pic {
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    left: -0px;
+
+    vertical-align: middle;
+}
+
+.hud .photo {
+    display: block;
+    text-align: center;
+    padding: 2px 10px;
+    font-size: 16px;
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    background-color: rgba(27, 29, 37, 0.99);
+    border-radius: 60px;
+    margin: auto;
+}
+
+
+
+.hud .item {
+    position: relative;
+    padding: 2.5px 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    z-index: 1;
+    border-radius: 15px;
+    width: 30px;
+    height: 30px;
+
+}
+
+.hud .item img {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.hud .main {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: rgba(41, 41, 41, 2);
+    padding: 8px 16px;
+    border-radius: 15px;
+    border-left: 3px solid #08f400;
+    border-right: 3px solid #08f400;
+    width: 280px;
+    height: 90px;
+    right: 10px;
+}
+
+.hud .side {
+    position: relative;
+    color: #fff;
+    font-weight: 700;
+    transition: all .2s ease-in-out;
+    right: -220px;
+}
+
+.hud .side.left {
+    padding-right: 10px;
+    margin-right: 10px;
+}
+
+.hud .side.left::after {
+    right: 0px;
+    top: 0px;
+}
+
+.hud .side.right {
+    padding-left: 10px;
+    margin-left: 5px;
+    top: -2px;
+}
+
+.hud .side.right::after {
+    left: 0;
+    top: 2px;
+}
+
+.hud .side.right img {
+    width: 18px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.hud .side:hover {
+    opacity: 0.7;
+}
+
+.hud .main .item {
+    overflow: hidden;
+}
+
+.hud .main .item:not(:last-of-type) {
+    margin-right: 10px;
+}
+
+.hud .main .item .overlay {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hud .main .item .overlay.heart {
+    background-color: rgba(116, 10, 0, 0.616);
+    height: 100%;
+}
+
+.hud .main .item .overlay.run {
+    background-color: rgba(251, 255, 0, 0.596);
+    height: 100%;
+}
+
+.hud .main .item .overlay.food {
+    background-color: rgba(110, 90, 0, 0.9);
+    height: 70%;
+}
+
+.hud .main .item .overlay.water {
+    background-color: rgba(67, 167, 255, 0.9);
+    height: 80%;
+}
+
+.hud .main .item .overlay.shield {
+    background-color: #00608d8f;
+    height: 80%;
+}
+
+.hud .sub {
+    direction: rtl;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.hud .sub>div {
+    position: relative;
+    right: -45px;
+    display: inline-block;
+    background-color: rgba(41, 41, 41, 2);
+    padding: 7.5px;
+    border-radius: 15px;
+    border-top: 3px solid #08f400;
+    border-bottom: 3px solid #08f400;
+    transition: right .2s ease-in-out;
+}
+
+.hud .sub>div.toggle {
+    right: 0;
+}
+
+.hud .sub .toggleSub {
+    position: absolute;
+    top: 10px;
+    left: -23px;
+    width: 18px;
+    height: 18px;
+    transition: all .3s ease-in-out;
+}
+
+.hud .sub .toggleSub.toggle {
+    transform: rotate(-180deg);
+}
+
+.hud .sub .toggleSub img {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 2px #000000);
+}
+
+.hud .sub .toggleSub:hover {
+    opacity: 0.7;
+}
+
+.hud .sub .item:not(:last-of-type) {
+    margin-bottom: 5px;
+}
+
+.hud .sub .item .hide {
+    opacity: 0.35;
+}
+
+.hud .sub .item .tooltip {
+    display: none;
+    position: absolute;
+    top: calc(50% - 23px / 2);
+    right: calc(100% + 17px);
+    white-space: nowrap;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 2.5px 10px;
+    font-size: 13px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    z-index: 1;
+}
+
+.hud .sub .item .tooltip::after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 14px / 2);
+    right: -14px;
+    border-top: 7px solid transparent;
+    border-left: 7px solid #222222;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    z-index: -1;
+}
+
+.hud .sub .item:hover .tooltip {
+    display: block;
+}

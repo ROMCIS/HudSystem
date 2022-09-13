@@ -1,0 +1,657 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  font-family: "Montserrat";
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+
+
+
+
+.screen {
+  position: absolute;
+  width: 100%;
+  background-color: #000;
+  display: none;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 10vh;
+  z-index: 999;
+  color: yellow;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-family: "Roboto";
+  font-weight: 600;
+}
+
+.movie {
+  display: none;
+  height: 82vh;
+  position: absolute;
+  z-index: 2;
+  border-top: 9vh;
+  border-bottom: 9vh;
+  border-color: black;
+  border-style: solid;
+  width: 100vw;
+  top: 0;
+}
+
+.hood {
+  display: none;
+  height: 100vh;
+  z-index: 2;
+  position: absolute;
+  background: black;
+  width: 100vw;
+  top: 0;
+}
+
+#display-hud {
+  display: none;
+}
+
+#display-hud .info-container {
+  position: absolute;
+  right: 0;
+  margin: 60px 30px 0 0;
+}
+
+#display-hud .info-container .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+}
+
+#display-hud .info-container .row div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 3px;
+  border-radius: 20px;
+}
+
+#display-hud .info-container .row div#voice {
+  margin-left: 5px;
+}
+
+#display-hud .info-container .row div#voice.icon {
+  font-size: 15px;
+}
+
+#display-hud .info-container .row .icon {
+  font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 0.95;
+  -webkit-filter: invert(99%) sepia(100%) saturate(12%) hue-rotate(210deg)
+    brightness(104%) contrast(100%);
+  filter: invert(99%) sepia(100%) saturate(12%) hue-rotate(210deg)
+    brightness(104%) contrast(100%);
+}
+
+#display-hud .info-container .row .icon.talking {
+  -webkit-filter: invert(96%) sepia(64%) saturate(2209%) hue-rotate(334deg)
+    brightness(101%) contrast(92%);
+  filter: invert(96%) sepia(64%) saturate(2209%) hue-rotate(334deg)
+    brightness(101%) contrast(92%);
+}
+
+#display-hud .info-container .row .label {
+  margin: 0 5px 0 3px;
+  font-family: "Roboto" !important;
+  display: flex;
+  align-items: center;
+}
+
+#display-hud .info-container .row #location {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#display-hud .progress-container {
+  display: none;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+#display-hud .progress-container svg {
+  margin-bottom: 10vh;
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg);
+  transform-box: fill-box;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+}
+
+#display-hud .progress-container .backdrop-circle {
+  stroke-width: 4px;
+  stroke: rgba(51, 51, 51, 0.3);
+  stroke-linecap: round;
+  fill: none;
+}
+
+#display-hud .progress-container .progress-icon {
+  -webkit-transform: rotate(-270deg) translateY(-60px);
+  transform: rotate(-270deg) translateY(-60px);
+}
+
+#display-hud .progress-container .progress-circle {
+  stroke-width: 5px;
+  stroke: #dbdbdb;
+  stroke-linecap: round;
+  fill: none;
+  stroke-dasharray: 169.646, 169.646;
+  stroke-dashoffset: 169.646;
+  -webkit-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.4));
+}
+
+#speedometer {
+  position: absolute;
+  display: none;
+  bottom: 0;
+  right: 0;
+  margin-right: 25px;
+  margin-bottom: -60px;
+}
+
+#speedometer .speedometer-container {
+  width: 270px;
+  height: 250px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+#speedometer .speedometer-container .speedBox {
+  text-align: center;
+  margin-top: -70px;
+  -webkit-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.4));
+}
+
+#speedometer .speedometer-container .speedBox > p {
+  font-weight: 600;
+  color: #fff;
+}
+
+#speedometer .speedometer-container .speedBox #speed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 40px;
+  font-weight: bold;
+  color: #fff;
+  line-height: 40px;
+}
+
+#speedometer .speedometer-container .speedBox #speed p {
+  font-family: "Roboto" !important;
+  letter-spacing: 0;
+}
+
+#speedometer .speedometer-container .speedBox #speed p.zero {
+  color: rgba(255, 255, 255, 0.4);
+  -webkit-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
+}
+
+#speedometer .speedometer-container .speedometer-box {
+  width: 100%;
+  height: 100%;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  position: absolute;
+}
+
+#speedometer .speedometer-container .speedometer-box #grTachometer {
+  -webkit-transform: rotate(35deg);
+  transform: rotate(35deg);
+}
+
+#speedometer .speedometer-container .speedometer-box #belt {
+  -webkit-transform: scale(1.2) translateY(73px) translateX(147px);
+  transform: scale(1.2) translateY(73px) translateX(147px);
+  fill: white;
+}
+
+#speedometer .speedometer-container .speedometer-box #belt.active {
+  fill: #f4e440;
+  -webkit-filter: drop-shadow(0 0 2px rgba(244, 229, 64, 0.3));
+  filter: drop-shadow(0 0 2px rgba(244, 229, 64, 0.3));
+}
+
+#speedometer .speedometer-container .speedometer-box .fuel-icon {
+  -webkit-transform: scale(0.75) translateY(135px) translateX(10px);
+  transform: scale(0.75) translateY(135px) translateX(10px);
+}
+
+#speedometer .speedometer-container .speedometer-box .engine-icon {
+  -webkit-transform: scale(0.8) translateY(125px) translateX(310px);
+  transform: scale(0.8) translateY(125px) translateX(310px);
+}
+#speedometer .speedometer-container .speedometer-box .nitro-icon {
+  display: none;
+  -webkit-transform: scale(0.7) translateY(25px) translateX(270px) rotate(-52deg);
+  transform: scale(0.7) translateY(25px) translateX(270px) rotate(-52deg)
+}
+
+#speedometer .speedometer-container .speedometer-box .nitro,
+#speedometer .speedometer-container .speedometer-box .nitroBar {
+  display: none;
+}
+
+#speedometer .speedometer-container .speedometer-box .tachometer,
+#speedometer .speedometer-container .speedometer-box .fuel,
+#speedometer .speedometer-container .speedometer-box .engine,
+#speedometer .speedometer-container .speedometer-box .nitro  {
+  stroke: rgba(0, 0, 0, 0.5);
+  stroke-width: 12;
+  stroke-linecap: round;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+}
+
+#speedometer .speedometer-container .speedometer-box .tachometerBar,
+#speedometer .speedometer-container .speedometer-box .fuelBar,
+#speedometer .speedometer-container .speedometer-box .engineBar,
+#speedometer .speedometer-container .speedometer-box .nitroBar  {
+  stroke-width: 12;
+  stroke-linecap: round;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  stroke-dashoffset: 0;
+  -webkit-transition: stroke-dashoffset 0.2s ease-in-out;
+  transition: stroke-dashoffset 0.2s ease-in-out;
+}
+
+#speedometer .speedometer-container .speedometer-box .tachometer,
+#speedometer .speedometer-container .speedometer-box .tachometerBar {
+  -webkit-transform: rotate(-171deg);
+  transform: rotate(-171deg);
+}
+
+#speedometer .speedometer-container .speedometer-box .fuel,
+#speedometer .speedometer-container .speedometer-box .fuelBar {
+  -webkit-transform: rotate(-172.5deg);
+  transform: rotate(-172.5deg);
+}
+
+#speedometer .speedometer-container .speedometer-box .engine,
+#speedometer .speedometer-container .speedometer-box .engineBar {
+  -webkit-transform: scaleX(-1) rotate(187deg);
+  transform: scaleX(-1) rotate(187deg);
+}
+
+#speedometer .speedometer-container .speedometer-box .nitro,
+#speedometer .speedometer-container .speedometer-box .nitroBar {
+  -webkit-transform: scaleX(-1) rotate(235deg);
+  transform: scaleX(-1) rotate(235deg);
+}
+
+#info {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 266px;
+  bottom: 0;
+  right: 0;
+  margin: 0 30px 30px 0;
+  -webkit-transform: skew(-10deg, 0deg);
+  transform: skew(-10deg, 0deg);
+}
+
+#info .vehicle {
+  display: none;
+}
+
+#info .no-vehicle {
+  display: block;
+}
+
+#info .life-health,
+#info .life-armour {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+#info .life-health .icon,
+#info .life-armour .icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 6px;
+}
+
+#info .life-health .icon img,
+#info .life-armour .icon img {
+  width: 15px;
+  -webkit-transform: skew(10deg, 0deg);
+  transform: skew(10deg, 0deg);
+}
+
+#info .life-health .bars,
+#info .life-armour .bars {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+#info .life-health .bars .item,
+#info .life-armour .bars .item {
+  width: 10px;
+  margin-left: 5px;
+  border-radius: 6px;
+  height: 35px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#info .vehicle .life-status {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: end;
+  align-content: flex-end;
+  margin-bottom: 0;
+}
+
+#info .vehicle .life-status:first-child {
+  margin-bottom: 0px !important;
+}
+
+#info .life-status {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+#info .life-status.oxygen-box,
+#info .life-status.stress-box {
+  display: none;
+}
+
+#info .life-status .life-box {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  height: 35px;
+  width: 35px;
+  border-radius: 6px;
+  margin-right: 8px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#info .life-status .life-box:last-child {
+  margin-right: 0px;
+}
+
+#info .life-status .life-box .life-bar {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+
+#info .life-status .life-box .image-box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+#info .life-status .life-box .image-box img {
+  height: 15px;
+  -webkit-transform: skew(10deg, 0deg);
+  transform: skew(10deg, 0deg);
+}
+
+#info .life-status .life-box.health .life-bar {
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    right top,
+    from(#991111),
+    to(#ff2e2e)
+  );
+  background: linear-gradient(to top right, #991111 0%, #ff2e2e 100%);
+}
+
+#info .life-status .life-box.armour .life-bar {
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    right top,
+    from(#23137c),
+    to(#3e25ca)
+  );
+  background: linear-gradient(to top right, #23137c 0%, #3e25ca 100%);
+}
+
+#info .life-status .life-box.hunger .life-bar {
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    right top,
+    from(#a0530c),
+    to(#f18926)
+  );
+  background: linear-gradient(to top right, #a0530c 0%, #f18926 100%);
+}
+
+#info .life-status .life-box.thirst .life-bar {
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    right top,
+    from(#0d3e75),
+    to(#1571db)
+  );
+  background: linear-gradient(to top right, #0d3e75 0%, #1571db 100%);
+}
+
+#info .life-status .life-box.stress .life-bar {
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    right top,
+    from(#ac8211),
+    to(#ffe057)
+  );
+  background: linear-gradient(to top right, #ac8211 0%, #ffe057 100%);
+}
+
+#info .life-status .life-box.oxygen .life-bar {
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    right top,
+    from(#5223a8),
+    to(#7f40f4)
+  );
+  background: linear-gradient(to top right, #5223a8 0%, #7f40f4 100%);
+}
+
+#info .life-status .life-box.oxygen .image-box img {
+  margin-right: -2px;
+}
+
+#info .life-health {
+  padding-right: 8px;
+}
+
+#info .life-health .icon {
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    right top,
+    from(#991111),
+    to(#ff2e2e)
+  );
+  background: linear-gradient(to top right, #991111 0%, #ff2e2e 100%);
+}
+
+#info .life-armour {
+  padding-right: 8px;
+}
+
+#info .life-armour .icon {
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    right top,
+    from(#23137c),
+    to(#3e25ca)
+  );
+  background: linear-gradient(to top right, #23137c 0%, #3e25ca 100%);
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  -webkit-animation-duration: 0.2s;
+  animation-duration: 0.2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+  -webkit-animation-duration: 0.2s;
+  animation-duration: 0.2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+
+/*# sourceMappingURL=hud.css.map */
