@@ -1,0 +1,136 @@
+<html><head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="css/googlefonts.css" rel="stylesheet">
+   <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="hud">
+   <div class="top">
+      <div class="main">
+      <span id="time" class="time"></span>
+      <span id="date" class="date">11:08 PM || 20/7/2022</span>
+         <div class="item" style="right: -28px; top: 20px;">
+            <img src="images/heart.svg" alt="heart">
+            <span id="heart" class="overlay heart"></span>
+         </div>
+         <div class="item" style="right: -28px; top: 20px;">
+            <img src="images/shield.png" alt="shield">
+            <span id="shield" class="overlay shield"></span>
+         </div>
+         <div class="item" style="right: -28px; top: 20px;">
+            <img src="images/run.svg" alt="run">
+            <span id="run" class="overlay run"></span>
+         </div>
+         <div class="item" style="right: -28px; top: 20px;">
+            <img src="images/food.svg" alt="food">
+            <span id="food" class="overlay food"></span>
+         </div>
+         <div class="item" style="right: -28px; top: 20px;"> 
+            <img src="images/water.svg" alt="water">
+            <span id="water" class="overlay water"></span>
+         </div>
+
+      </div>
+      <div class="sub">
+         <div>
+            <div class="toggleSub">
+               <img src="images/options.svg" alt="toggle">
+            </div>
+            <div id="message" class="item toggleBadge">
+               <img class="hide" src="images/message.svg" alt="message">
+               <span class="tooltip">Enabled PM</span>
+            </div>
+            <div id="report" class="item">
+               <img src="images/report.svg" alt="report">
+               <span class="tooltip">Reports | OFF</span>
+            </div>
+            <div id="walk" class="item">
+               <img src="images/walk.svg" alt="walk">
+               <span class="tooltip">Walk 1</span>
+               <span id="walk_id" class="tooltip">Walk 1</span>
+            </div>
+            <div id="afk" class="item toggleBadge">
+               <img src="images/afk.svg" alt="afk">
+               <span class="tooltip">Afk</span>
+            </div>
+               <div id="gun" class="item">
+               <img src="images/gun.svg" alt="gun">
+               <span class="tooltip">Gun</span>
+            </div>
+            <div id="founder" class="item toggleBadge">
+               <img src="images/founder.svg" alt="ArabNightFounder">
+               <span class="tooltip">Founder</span>
+            </div>
+            <div id="scripter" class="item toggleBadge">
+               <img src="images/scripter.svg" alt="scripter">
+               <span class="tooltip">Scripter</span>
+            </div>
+            <div id="admin" class="item toggleBadge">
+               <img src="images/admin.svg" alt="admin">
+               <span class="tooltip">Admin</span>
+            </div>
+            <div id="support" class="item toggleBadge">
+               <img src="images/support.svg" alt="support">
+               <span class="tooltip">Support</span>
+            </div>
+            <div id="nitro" class="item toggleBadge">
+               <img src="images/nitro.svg" alt="nitro">
+               <span class="tooltip">Nitro Booster</span>
+            </div>
+         </div>
+      </div>
+   </div>
+<script >
+
+const hideBtn = document.getElementById('scripter');
+hideBtn.addEventListener('click', () => {
+		mta.triggerEvent("hide", "Hello MTA") 
+	});
+
+const scripterBtn = document.getElementById('scripter');
+	scripterBtn.addEventListener('click', () => {
+		mta.triggerEvent("scriper_fy", "Hello MTA") 
+	});
+
+const founderBtn = document.getElementById('founder');
+	founderBtn.addEventListener('click', () => {
+		mta.triggerEvent("founder_fy", "Hello MTA") 
+	});
+
+const adminBtn = document.getElementById('admin');
+	adminBtn.addEventListener('click', () => {
+		mta.triggerEvent("admins_fy", "Hello MTA") 
+	});
+
+const afkBtn = document.getElementById('afk');
+	afkBtn.addEventListener('click', () => {
+		mta.triggerEvent("romcis_afk", "Hello MTA") 
+	});
+
+const suppBtn = document.getElementById('support');
+	suppBtn.addEventListener('click', () => {
+		mta.triggerEvent("supp_fy", "Hello MTA") 
+	});
+
+
+const vipBtn = document.getElementById('nitro');
+	vipBtn.addEventListener('click', () => {
+		mta.triggerEvent("vip_fy", "Hello MTA") 
+	});
+
+
+const walkBtn = document.getElementById('walk');
+	walkBtn.addEventListener('click', () => {
+		mta.triggerEvent("walkstyle_fy", "Hello MTA") 
+	});
+
+const togpm = document.getElementById('message');
+	togpm.addEventListener('click', () => {
+		mta.triggerEvent("togprivate", "Hello MTA") 
+	});
+
+</script>
+   <script src="script.js"></script>
+</body>
+</html>
